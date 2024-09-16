@@ -27,7 +27,7 @@ function TreeList() {
       <ul>
         {trees.map(tree => (
           <li key={tree.id}>
-            <strong>{tree.name}</strong> - {tree.location}
+            <strong>{tree.species}</strong> - {tree.location}
           </li>
         ))}
       </ul>

@@ -1,16 +1,24 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import TreeList from './components/TreeList';
-import AddTreeForm from './components/AddTreeForm';
 import UserList from './components/UserList';
-
+import AddTree from './components/AddTree';
+import LandingPage from './components/LandingPage'; 
+import Login from './components/Login';
+import Signup from './components/Signup';
 
 function App() {
   return (
-    <div className="App">
-      <AddTreeForm />
-      <TreeList />
-      <UserList />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} /> {/* Updated to render LandingPage at the root path */}
+        <Route path="/trees" element={<TreeList />} /> {/* Updated path to /trees for clarity */}
+        <Route path="/users" element={<UserList />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/add-tree" element={<AddTree />} />
+      </Routes>
+    </Router>
   );
 }
 

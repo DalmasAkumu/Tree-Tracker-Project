@@ -7,7 +7,7 @@ function UserList() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/users/')
+    axios.get('http://127.0.0.1:8000/api/userprofiles/')
       .then(response => {
         setUsers(response.data);
         setLoading(false);
@@ -23,7 +23,7 @@ function UserList() {
 
   return (
     <div>
-      <h1>User List</h1>
+      <h1>User Profiles</h1>
       <ul>
         {users.map(user => (
           <li key={user.id}>
