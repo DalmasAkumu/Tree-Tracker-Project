@@ -46,12 +46,13 @@ class ImpactReport(models.Model):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField(blank=True, null=True)
-    profile_picture = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
+    other_profile_field_1 = models.CharField(max_length=255, blank=True, null=True)
+    other_profile_field_2 = models.CharField(max_length=255, blank=True, null=True)
+    bio = models.TextField(blank=True, null=True)  # Optional: Add bio field
+    profile_picture = models.ImageField(upload_to='profile_pics/', blank=True, null=True)  # Optional: Add profile_picture field
 
     def __str__(self):
         return self.user.username
-
 
      
     

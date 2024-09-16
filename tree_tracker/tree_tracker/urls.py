@@ -23,5 +23,7 @@ def home(request):
 urlpatterns = [
     path('', home),  
     path('admin/', admin.site.urls),
-    path('api/', include('MyTree.urls')),  # Include app's URLs
+    path('api/', include('MyTree.urls')),
 ]
+
+
