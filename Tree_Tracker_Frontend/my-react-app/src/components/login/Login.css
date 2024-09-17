@@ -1,0 +1,53 @@
+/* Login Form Styles */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff; /* White background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+  color: #006400; /* Dark green for heading */
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.login-form input:focus {
+  border-color: #006400; /* Dark green border on focus */
+  outline: none;
+}
+
+.login-form button {
+  padding: 10px 20px;
+  background-color: #006400; /* Dark green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #004d00; /* Darker green on hover */
+}
+
+.login-form p {
+  color: #cc0000; /* Red for error messages */
+  margin-top: 10px;
+  font-size: 1rem;
+}

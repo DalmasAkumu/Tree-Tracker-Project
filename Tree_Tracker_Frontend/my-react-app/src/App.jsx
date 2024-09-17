@@ -4,8 +4,10 @@ import TreeList from './components/TreeList';
 import UserList from './components/UserList';
 import AddTree from './components/AddTree';
 import LandingPage from './components/LandingPage'; 
-import Login from './components/Login';
-import Signup from './components/Signup';
+import Login from './components/login/Login';
+import Signup from './components/signup/Signup';
+import './Styles/customStyles.css';
+
 
 function App() {
   return (

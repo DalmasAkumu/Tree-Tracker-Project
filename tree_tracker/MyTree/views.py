@@ -3,6 +3,9 @@ from rest_framework import viewsets
 from .models import Tree, UserProfile
 from .serializers import TreeSerializer, UserProfileSerializer, UserSerializer
 from django.contrib.auth.models import User
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .agro_api import get_ndvi_data
 
 class TreeViewSet(viewsets.ModelViewSet):
     queryset = Tree.objects.all()
@@ -21,6 +24,17 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         # Custom logic if needed
         return super().create(request, *args, **kwargs)
+    
+@api_view(['GET'])
+def get_tree_ndvi(request, lat, lon):
+    """
+    Fetch NDVI data for a tree's location using latitude and longitude
+    """
+    ndvi_data = get_ndvi_data(lat, lon)
+    if ndvi_data:
+        return Response(ndvi_data, status=200)
+    else:
+        return Response({"error": "Unable to fetch NDVI data"}, status=400)
 
     
     

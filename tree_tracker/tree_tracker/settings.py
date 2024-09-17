@@ -91,6 +91,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tree_tracker.wsgi.application'
 
+OPENWEATHERMAP_API_KEY = '91aca7a4670405df68b3eddf1bdde75b'
+
+
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import '../login/Login';
 import axios from 'axios';
+
 
 function Signup() {
   const [username, setUsername] = useState('');
