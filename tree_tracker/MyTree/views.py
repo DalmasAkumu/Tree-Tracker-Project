@@ -1,4 +1,5 @@
 #from django.shortcuts import render
+import logging
 from rest_framework import viewsets
 from .models import Tree, UserProfile
 from .serializers import TreeSerializer, UserProfileSerializer, UserSerializer
@@ -7,9 +8,15 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .agro_api import get_ndvi_data
 
+logger = logging.getLogger('MyTree') 
+
 class TreeViewSet(viewsets.ModelViewSet):
     queryset = Tree.objects.all()
     serializer_class = TreeSerializer
+
+    def list(self, request, *args, **kwargs):
+        logger.info("Tree list accessed")
+        return super().list(request, *args, **kwargs)
 
 
 

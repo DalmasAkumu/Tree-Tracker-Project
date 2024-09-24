@@ -13,11 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import logging
 from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
 
+# Set up logging
+logger = logging.getLogger(__name__)
+
 def home(request):
+    logger.info("Home page accessed")
     return HttpResponse("Welcome to the Tree Tracker API!")
 
 urlpatterns = [

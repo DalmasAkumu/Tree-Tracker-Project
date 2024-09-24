@@ -1,3 +1,5 @@
+# urls.py
+
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
@@ -6,8 +8,8 @@ from .views import TreeViewSet, UserProfileViewSet, UserViewSet, get_tree_ndvi
 # Create a router and register our viewsets
 router = DefaultRouter()
 router.register(r'trees', TreeViewSet)
-router.register(r'users', UserViewSet)
-router.register(r'users', UserProfileViewSet)
+router.register(r'users', UserViewSet)  # Keep UserViewSet here
+router.register(r'user-profiles', UserProfileViewSet)  # Rename this one
 
 # URLs provided by the router
 urlpatterns = [
